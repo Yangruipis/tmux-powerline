@@ -22,7 +22,9 @@ run_segment() {
 	fi
 
 	if [ -n "$branch" ]; then
-		echo "${branch}"
+	    # echo "${branch}"
+	    new_branch=`echo ${branch} | awk -F '[ /]' '{print $1" "$(NF)}'`
+	    echo ${new_branch}
 	fi
 	return 0
 }
